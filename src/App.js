@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { User } from "./components/User"
 import './App.css';
 
 function App() {
@@ -19,7 +20,18 @@ function App() {
 
   console.log(users);
 
-  return null;
+
+  return (
+    <>
+      <div>
+        {
+          users.map((user) => (
+            <User id={user.id} key={user.id} name={user.name} email={user.email} />
+          ))
+        }
+      </div>
+    </>
+  );
 
 }
 
